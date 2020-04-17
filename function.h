@@ -23,10 +23,14 @@ void infix_to_postfix(char * exp, char * tmp, int index, int idx_stack, int idx_
                 stack[idx_stack] = exp[i];
                 idx_stack++;
             }else{
-                tmp[idx_tmp] = stack[idx_stack-1];
-                idx_tmp++;
-                stack[idx_stack-1] = 0;
-                stack[idx_stack-1] = exp[i];
+                for(int j = idx_stack-1; j >= 0; j--){
+                    tmp[idx_tmp] = stack[j];
+                    stack[j] = 0;
+                    idx_tmp++;
+                }
+                idx_stack = 0;
+                stack[idx_stack] = exp[i];
+                idx_stack++;
             }
         }
     }
