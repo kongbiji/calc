@@ -116,7 +116,7 @@ int evalPostfix(char * exp){
             pop_stack(stack, &idx_stack, &a, &b);
             stack[idx_stack] = a / b;
             calc_num++;
-            printf("%d: %d + %d = %d\n", calc_num, a, b, a/b); // 중간 계산값 출력
+            printf("%d: %d / %d = %d\n", calc_num, a, b, a/b); // 중간 계산값 출력
             idx_stack++;
             continue;          
         }
